@@ -1,0 +1,180 @@
+@media screen and (max-width:1050px){
+    .head .search-box{
+        width: 330px;
+    }
+}
+
+
+@media screen and (max-width:950px){
+    .head .search-box{
+        width: 310px;
+    }
+}
+
+
+@media screen and (max-width:950px){
+    .head .search-box{
+        width: 290px;
+    }
+}
+
+
+
+
+
+@media screen and (max-width:770px) {
+     .head .menu{
+          margin-right: 10px;
+     }
+     .head .logo{
+         margin-left: 0px;
+     }
+     .head .logo img{
+        width: 1.5rem;
+        margin-right:5px;
+     }
+     .head .logo h4{
+        font-size: 1rem;
+     }
+
+     /* .head .input-field{
+        width: 350px;
+        margin : 0px auto;
+     } */
+     .head .input-field input{
+        width: 80%;
+     }
+
+     .head .input-field button{
+        width: 20%;
+     }
+
+     .head .search-box{
+        display: block;
+        width: 310px;
+     }
+
+    .head .darktheme{
+        font-size: 0.8rem;
+        padding-right: 1rem;
+    }
+
+    .head .user{
+        font-size: 1.2rem;
+    }
+     
+} 
+
+@media screen and (max-width:730px){
+    .head .search-box{
+        width: 280px;
+    }
+}
+
+
+@media screen and (max-width:695px){
+    .head .menu{
+        display: none;
+   }
+    .head .search-box{
+        width: 260px;
+    }
+
+    .head .darktheme{
+        font-size: 0.6rem;
+    }
+
+    .head .user{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:550px){
+    .head .search-box{
+        width: 245px;
+    }
+
+    .theme{
+        width: 2.5rem;
+    }
+
+    .theme i{
+        margin-left: 8px;
+    }
+
+    .theme span{
+        display: none;
+    }
+}
+
+@media screen and (max-width:500px){
+    .head{
+        padding: 15px 10px;
+    }
+
+    .head .logo h4{
+        font-size: 0.8rem;
+     }
+
+     .head .logo h4 sup{
+        font-size: 0.5rem;
+     }
+
+
+     .head .search-box{
+        width: 230px;
+     }
+
+    .head .input-field{
+        width: 230px;
+        margin: 0 auto;
+    }
+ 
+
+    .head .darktheme{
+        padding-right: 0.5rem;
+    }
+}
+
+@media screen and (max-width:440px){
+    .head .logo img{
+       width: 1.3rem;
+    }
+    .head .logo h4{
+        font-size: 0.6rem;
+    }
+
+    .theme{
+        width: 1.5rem;
+        padding: 2px;
+    }
+    
+
+    .head .user{
+        font-size: 0.8rem;
+    }
+
+}
+
+
+@media screen and (max-width:390px){
+    .head .input-field{
+        width: 200px;
+    }
+
+    .head .search-box{
+        width: 200px;
+    }
+}
+
+
+@media screen and (max-width:360px){
+    .head .input-field{
+        width: 170px;
+    }
+    
+    .head .search-box{
+        width: 170px;
+    }
+}
+
