@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
-import {
-  GOOGLE_API_KEY,
-  YOUTUBE_SEARCH_API,
-  YOUTUBE_VIDEOS_API,
-} from "../utils/constants";
+import { YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/searchSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import bivekTube from "../utils/BIVEKTUBE.png";
 import "../utils/head.css";
 
@@ -31,7 +27,7 @@ const Head = ({ btn }) => {
       if (searchCache[searchQuery]) {
         setSuggestions(searchCache[searchQuery]);
       } else {
-        getSuggestions();
+        getSuggestion();
       }
     }, 200);
 
@@ -40,7 +36,7 @@ const Head = ({ btn }) => {
     };
   }, [searchQuery]);
 
-  const getSuggestions = async () => {
+  const getSuggestion = async () => {
     console.log("API CALL " + searchQuery);
     const response = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const data = await response.json();

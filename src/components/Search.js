@@ -10,7 +10,7 @@ const Search = () => {
   const [searchparams] = useSearchParams();
   const[videos,setVideos] = useState([]);
 
-  let searchQuery = searchparams.get('search_query');
+  let searchquery = searchparams.get('search_query');
 
   const dispatch = useDispatch();
 
@@ -18,10 +18,10 @@ const Search = () => {
   useEffect(()=>{
      dispatch(openMenu());
      getVideos();
-  },[searchQuery]);
+  },[searchquery]);
 
   const getVideos = async ()=>{
-        const res = await fetch(YOUTUBE_SEARCH_VIDEO_WITH_QUERY_API + searchQuery);
+        const res = await fetch(YOUTUBE_SEARCH_VIDEO_WITH_QUERY_API + searchquery);
         const json = await res.json();
         console.log(json?.items);
         setVideos(json?.items);
