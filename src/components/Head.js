@@ -121,7 +121,7 @@ const Head = ({ btn }) => {
                 return (
                   <li
                     key={suggestion}
-                    onMouseDown={(e) => handleClickSuggestion(e)}
+                    onTouchStart={(e) => handleClickSuggestion(e)}
                     className="text-sm py-1 px-2 rounded-xl"
                   >
                     <i className="fa-solid fa-magnifying-glass text-sm"></i>{" "}
