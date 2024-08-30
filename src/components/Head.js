@@ -40,7 +40,7 @@ const Head = ({ btn }) => {
     console.log("API CALL " + searchQuery);
     const response = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const data = await response.json();
-    //  console.log(data[1]);
+     console.log(data[1]);
     setSuggestions(data[1]);
 
     dispatch(
