@@ -27,7 +27,7 @@ const Head = ({ btn }) => {
       if (searchCache[searchQuery]) {
         setSuggestions(searchCache[searchQuery]);
       } else {
-        getSuggestion();
+        getSuggestions();
       }
     }, 200);
 
@@ -36,11 +36,14 @@ const Head = ({ btn }) => {
     };
   }, [searchQuery]);
 
-  const getSuggestion = async () => {
+
+
+  const getSuggestions = async () => {
     console.log("API CALL " + searchQuery);
-    const response = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+    const response = await fetch(YOUTUBE_SEARCH_API+searchQuery);
     const data = await response.json();
      console.log(data[1]);
+
     setSuggestions(data[1]);
 
     dispatch(

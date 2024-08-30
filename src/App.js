@@ -56,15 +56,5 @@ export const appRouter = createBrowserRouter([{
 
 
 
-//   return (
-  
-//     <div className={darkMode?' text-white hover:bg-gray-900':' text-black hover:bg-gray-100'} style={{backgroundColor: darkMode ?'#2a3541':'#ffffff'}}>
-//          <Head btn={darkModeButton}/>
-         
-//     </div>
-//   );
-// }
-
-
 
 export default App;

@@ -45,7 +45,7 @@ const Watchpage = () => {
              <iframe className='rounded-xl w-full'  height="500" src={"https://www.youtube.com/embed/"+searchParams.get('v')}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         
           </div>
-       <div className=''>
+       <div>
           <VideoDatas vdata={videoData} vId = {videoId}/>
        </div>
       </div>

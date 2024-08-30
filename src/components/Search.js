@@ -32,7 +32,7 @@ const Search = () => {
             <div className='flex flex-col srch-sh px-3  items-center'>
                 <div className='srch-head p-2 m-2'>
                     {videos?.map(video =>
-                        <Link key={video?.id?.videoId} to={'/watch?v=' + video?.id?.videoId} >
+                        <Link key={video?.id?.videoId || video?.etag} to={'/watch?v=' + video?.id?.videoId} >
                             <div className='px-3 m-6 flex srch'>
                                 <img className='rounded-lg w-[400px] h-[210px] ' alt='thumbnail' src={video?.snippet?.thumbnails?.medium?.url} />
                                 <ul className='flex flex-col justify-start ml-5 w-96'>
