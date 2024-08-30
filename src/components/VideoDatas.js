@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { GOOGLE_API_KEY } from '../utils/constants';
+import { YOUTUBE_COMMENTS_API } from '../utils/constants';
 import CommentCard from './CommentCard';
 import '../utils/watchpage.css';
 
 const VideoDatas = ({vdata,vId}) => {
 
   const [comments,setComments] = useState([]);
+  const videoId = vId;
   //  console.log(vdata,vId);
 
    useEffect(()=>{
       fetchCommentData();
    },[vId])
 
+   const apiURL = YOUTUBE_COMMENTS_API(videoId);
+
    const fetchCommentData = async ()=>{
-          const response = await fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${vId}&key=${GOOGLE_API_KEY}`);
+          const response = await fetch(apiURL);
 
           const data = await response.json();
           console.log(data.items);
