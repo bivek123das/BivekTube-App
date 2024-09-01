@@ -121,6 +121,7 @@ const Head = ({ btn }) => {
                 return (
                   <li
                     key={suggestion}
+                    onClick={(e) => handleClickSuggestion(e)}
                     onTouchStart={(e) => handleClickSuggestion(e)}
                     className="text-sm py-1 px-2 rounded-xl"
                   >
