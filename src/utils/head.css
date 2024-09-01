@@ -1,19 +1,8 @@
-.suggestions {
-    width: 100%;
-    position: relative;
-    z-index: 50;
-  }
-
-
-  .fixed-suggestions {
-    z-index: 50; 
-    position: absolute; 
-    top: 100%; 
-    left: 0%; 
-    width:100%;
-  }  
-
-
+@media only screen and (max-width:1180px){
+    .head .search-box{
+        width: 350px;
+    }  
+}
 
 
 @media only screen and (max-width:1050px){
@@ -30,7 +19,7 @@
 }
 
 
-@media only screen and (max-width:950px){
+@media only screen and (max-width:870px){
     .head .search-box{
         width: 290px;
     }
@@ -83,20 +72,14 @@
 
 
 @media only screen and (max-width:695px){
-
-    .head .fixed-suggestions {
-        z-index: 50; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        width:100%;
-      }
+    
 
     .head .menu{
         display: none;
    }
     .head .search-box{
         width: 260px;
+        margin: 0px auto;
     }
 
     .head .darktheme{
@@ -153,6 +136,10 @@
 }
 
 @media only screen and (max-width:440px){
+    .head .search-box{
+        width: 210px;
+        margin: 0px auto;
+     }
     .head .logo img{
        width: 1.3rem;
     }
@@ -174,13 +161,19 @@
 
 
 @media only screen and (max-width:390px){
+    .head .search-box{
+        width: 200px;
+        margin: 0px auto;
+     }
     .head .input-field{
         width: 200px;
+        margin: 0px auto;
     }
 }
 
 
 @media only screen and (max-width:360px){
+    
     .head .input-field{
         width: 170px;
     }

@@ -66,6 +66,12 @@ const Head = ({ btn }) => {
     navigate("/search?search_query=" + encodeURI(event.target.innerText));
   };
 
+
+  const handleTouchStart = (event) => {
+    event.preventDefault();
+    handleClickSuggestion(event);
+  };
+
   const dispatch = useDispatch();
 
   const toggleMenuHandler = () => {
@@ -115,7 +121,7 @@ const Head = ({ btn }) => {
         </div>
         {showSuggestions && (
           <div
-            className="suggestions  fixed-suggestions search-box shadow-xl rounded-xl p-2 mt-1"
+            className="fixed w-[27.5rem] search-box shadow-xl rounded-xl p-2 mt-1"
             style={{
               color: darkMode ? "white" : "black",
               backgroundColor: darkMode ? "#1F2937" : "white",
@@ -126,8 +132,8 @@ const Head = ({ btn }) => {
                 return (
                   <li
                     key={suggestion}
-                    onClick={(e) => handleClickSuggestion(e)}
-                    onTouchStart={(e) => handleClickSuggestion(e)}
+                    onMouseDown={(e) => handleClickSuggestion(e)}
+                    onTouchStart={handleTouchStart}
                     className="text-sm py-1 px-2 rounded-xl"
                   >
                     <i className="fa-solid fa-magnifying-glass text-sm"></i>{" "}
