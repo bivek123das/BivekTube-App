@@ -53,6 +53,13 @@ const Head = ({ btn }) => {
     );
   };
 
+
+  const handleBlur = () => {
+    setTimeout(() => {
+      setShowSuggestions(false);
+    }, 100);
+  };
+
   const handleClickSuggestion = (event) => {
     setSearchQuery(event.target.innerText);
     setShowSuggestions(false);
@@ -99,9 +106,7 @@ const Head = ({ btn }) => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowSuggestions(true)}
-            onBlur={() => {
-              setShowSuggestions(false);
-            }}
+            onBlur={handleBlur}
           />
 
           <button className="border-[1px] border-l-0 border-gray-500  rounded-r-full py-1 px-2 w-14 ">
@@ -110,7 +115,7 @@ const Head = ({ btn }) => {
         </div>
         {showSuggestions && (
           <div
-            className="search-box fixed w-[27.5rem] shadow-xl rounded-xl p-2 mt-1"
+            className="suggestions  fixed-suggestions search-box shadow-xl rounded-xl p-2 mt-1"
             style={{
               color: darkMode ? "white" : "black",
               backgroundColor: darkMode ? "#1F2937" : "white",

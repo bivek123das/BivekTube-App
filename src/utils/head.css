@@ -1,18 +1,36 @@
-@media screen and (max-width:1050px){
+.suggestions {
+    width: 100%;
+    position: relative;
+    z-index: 50;
+  }
+
+
+  .fixed-suggestions {
+    z-index: 50; 
+    position: absolute; 
+    top: 100%; 
+    left: 0%; 
+    width:100%;
+  }  
+
+
+
+
+@media only screen and (max-width:1050px){
     .head .search-box{
         width: 330px;
     }
 }
 
 
-@media screen and (max-width:950px){
+@media only screen and (max-width:950px){
     .head .search-box{
         width: 310px;
     }
 }
 
 
-@media screen and (max-width:950px){
+@media only screen and (max-width:950px){
     .head .search-box{
         width: 290px;
     }
@@ -22,7 +40,7 @@
 
 
 
-@media screen and (max-width:770px) {
+@media only screen and (max-width:770px) {
      .head .menu{
           margin-right: 10px;
      }
@@ -37,10 +55,6 @@
         font-size: 1rem;
      }
 
-     /* .head .input-field{
-        width: 350px;
-        margin : 0px auto;
-     } */
      .head .input-field input{
         width: 80%;
      }
@@ -49,10 +63,6 @@
         width: 20%;
      }
 
-     .head .search-box{
-        display: block;
-        width: 310px;
-     }
 
     .head .darktheme{
         font-size: 0.8rem;
@@ -65,14 +75,23 @@
      
 } 
 
-@media screen and (max-width:730px){
+@media only screen and (max-width:730px){
     .head .search-box{
         width: 280px;
     }
 }
 
 
-@media screen and (max-width:695px){
+@media only screen and (max-width:695px){
+
+    .head .fixed-suggestions {
+        z-index: 50; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        width:100%;
+      }
+
     .head .menu{
         display: none;
    }
@@ -89,10 +108,7 @@
     }
 }
 
-@media screen and (max-width:550px){
-    .head .search-box{
-        width: 245px;
-    }
+@media only screen and (max-width:550px){
 
     .theme{
         width: 2.5rem;
@@ -107,7 +123,7 @@
     }
 }
 
-@media screen and (max-width:500px){
+@media only screen and (max-width:500px){
     .head{
         padding: 15px 10px;
     }
@@ -136,7 +152,7 @@
     }
 }
 
-@media screen and (max-width:440px){
+@media only screen and (max-width:440px){
     .head .logo img{
        width: 1.3rem;
     }
@@ -157,24 +173,17 @@
 }
 
 
-@media screen and (max-width:390px){
+@media only screen and (max-width:390px){
     .head .input-field{
-        width: 200px;
-    }
-
-    .head .search-box{
         width: 200px;
     }
 }
 
 
-@media screen and (max-width:360px){
+@media only screen and (max-width:360px){
     .head .input-field{
         width: 170px;
     }
     
-    .head .search-box{
-        width: 170px;
-    }
 }
 
