@@ -4,9 +4,12 @@ export const LIVE_CHAT_COUNT = 25;
 
 export const YOUTUBE_VIDEOS_API= `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=60&regionCode=IN&key=${GOOGLE_API_KEY}`;
 
-export const YOUTUBE_SEARCH_API = "https://cors-anywhere.herokuapp.com/https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+// export const YOUTUBE_SEARCH_API = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+export const YOUTUBE_SEARCH_API = "https://suggestqueries.google.com/complete/search";
 
 export const YOUTUBE_SEARCH_VIDEO_WITH_QUERY_API = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=${GOOGLE_API_KEY}&q=`;
 
 export const YOUTUBE_COMMENTS_API = (videoId)=> `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${GOOGLE_API_KEY}`;
+
+
 

@@ -6,6 +6,8 @@ import { cacheResults } from "../utils/searchSlice";
 import { useNavigate } from "react-router-dom";
 import bivekTube from "../utils/BIVEKTUBE.png";
 import "../utils/head.css";
+import axios from "axios";
+import jsonpAdapter from "axios-jsonp"
 
 const Head = ({ btn }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -17,11 +19,6 @@ const Head = ({ btn }) => {
   const searchCache = useSelector((store) => store.search);
 
   useEffect(() => {
-    // console.log(searchQuery);
-
-    // make an api call for every key press
-    // But if the difference between 2 api call is < 200 ms
-    // Decline the Api Call
 
     const timer = setTimeout(() => {
       if (searchCache[searchQuery]) {
@@ -38,20 +35,44 @@ const Head = ({ btn }) => {
 
 
 
+  // const getSuggestions = async () => {
+  //   console.log("API CALL " + searchQuery);
+  //   const response = await fetch(YOUTUBE_SEARCH_API+searchQuery);
+  //   const data = await response.json();
+  //    console.log(data[1]);
+
+  //   setSuggestions(data[1]);
+
+  //   dispatch(
+  //     cacheResults({
+  //       [searchQuery]: data[1],
+  //     })
+  //   );
+  // };
+
   const getSuggestions = async () => {
-    console.log("API CALL " + searchQuery);
-    const response = await fetch(YOUTUBE_SEARCH_API+searchQuery);
-    const data = await response.json();
-     console.log(data[1]);
+    try {
+      const res = await axios({
+        url: YOUTUBE_SEARCH_API,
+        adapter: jsonpAdapter,
+        params: {
+          client: "youtube",
+          hl: "en",
+          ds: "yt",
+          q: searchQuery,
+        },
+      });
 
-    setSuggestions(data[1]);
+      // console.log(res);
 
-    dispatch(
-      cacheResults({
-        [searchQuery]: data[1],
-      })
-    );
-  };
+      const data = res.data[1].map((it) => it[0]);
+      // console.log(data)
+      dispatch(cacheResults({ [searchQuery]: data }));
+      setSuggestions(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };  
 
 
   const handleBlur = () => {
